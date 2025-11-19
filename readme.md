@@ -40,8 +40,8 @@ project_root/
 
 ### 1. Clone Repository
 ```bash
-git clone <repository-url>
-cd project_root
+git clone https://github.com/litshivang/Codaemon
+
 ```
 
 ### 2. Create Virtual Environment
@@ -74,9 +74,9 @@ python manage.py runserver
 ```
 Access the app at `http://127.0.0.1:8000/`.
 
-## Automated Test Setup (Windows)
+## Automated Test Setup (Windows)  
 
-To make testing easy for recruiters, a **PowerShell automation script** is provided: `setup.ps1`. It performs the following tasks:
+To make testing easy a **PowerShell automation script** is provided: `setup.ps1`. It performs the following tasks:
 
 1. Creates and activates a virtual environment.
 2. Installs required packages from `requirements.txt`.
@@ -114,14 +114,6 @@ python manage.py runserver
 - Wavesurfer.js (frontend included via CDN)
 - Mutagen (for audio validation)
 
-## .gitignore
-```
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-
 # Virtual Environment
 venv/
 
@@ -143,5 +135,3 @@ mutagen
 ```
 
 ---
-
-This README provides **all steps** for setup, testing, and running the project. Recruiters can run the automation script to quickly have a ready-to-test environment.

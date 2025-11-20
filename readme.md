@@ -36,12 +36,38 @@ project_root/
 └── static/audio/         # Sample audio files for testing
 ```
 
+## Automated Test Setup (Windows)  
+
+To make testing easy a **PowerShell automation script** is provided: `setup.ps1`. It performs the following tasks:
+
+1. Creates and activates a virtual environment.
+2. Installs required packages from `requirements.txt`.
+3. Runs Django migrations.
+4. Creates a superuser (`admin/Admin123`).
+5. Creates 3 test users with usernames `testuser1`, `testuser2`, `testuser3`.
+6. Uploads sample audio files from `static/audio/` for each test user.
+
+### Running the Automation Script
+1. Open PowerShell in the project root.
+2. Execute:
+```powershell
+.\setup.ps1
+```
+3. After completion, the server can be run with:
+```powershell
+python manage.py runserver
+```
+4. Access dashboards:
+   - `http://127.0.0.1:8000/users/1/dashboard/`
+   - `http://127.0.0.1:8000/users/2/dashboard/`
+   - `http://127.0.0.1:8000/users/3/dashboard/`
+
 ## Setup Instructions (Manual Steps)
 
 ### 1. Clone Repository
 ```bash
 git clone https://github.com/litshivang/Codaemon
-
+cd .\Codaemon\
 ```
 
 ### 2. Create Virtual Environment
@@ -73,32 +99,6 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 Access the app at `http://127.0.0.1:8000/`.
-
-## Automated Test Setup (Windows)  
-
-To make testing easy a **PowerShell automation script** is provided: `setup.ps1`. It performs the following tasks:
-
-1. Creates and activates a virtual environment.
-2. Installs required packages from `requirements.txt`.
-3. Runs Django migrations.
-4. Creates a superuser (`admin/Admin123`).
-5. Creates 3 test users with usernames `testuser1`, `testuser2`, `testuser3`.
-6. Uploads sample audio files from `static/audio/` for each test user.
-
-### Running the Automation Script
-1. Open PowerShell in the project root.
-2. Execute:
-```powershell
-.\setup.ps1
-```
-3. After completion, the server can be run with:
-```powershell
-python manage.py runserver
-```
-4. Access dashboards:
-   - `http://127.0.0.1:8000/users/1/dashboard/`
-   - `http://127.0.0.1:8000/users/2/dashboard/`
-   - `http://127.0.0.1:8000/users/3/dashboard/`
 
 ## Testing the App
 - Upload audio by drag-and-drop or file selector.

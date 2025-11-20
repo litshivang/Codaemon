@@ -53,10 +53,7 @@ To make testing easy a **PowerShell automation script** is provided: `setup.ps1`
 ```powershell
 .\setup.ps1
 ```
-3. After completion, the server can be run with:
-```powershell
-python manage.py runserver
-```
+3. After completion, the server will run automatically 
 4. Access dashboards:
    - `http://127.0.0.1:8000/users/1/dashboard/`
    - `http://127.0.0.1:8000/users/2/dashboard/`
